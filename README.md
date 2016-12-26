@@ -1,6 +1,10 @@
 # ocejwcd
 Java EE 6 Web Component Developer Certified Expert 1Z0-899
 
+**************************************************************************************************************************
+**********************                              Chapter 1                                       **********************
+**************************************************************************************************************************
+
 Notes:
 - IP (Internet Protocol) is a specification which defined addresses for each individual computer attached to the internet.
 - IPv4 is capable of handle 4.2 billion machines. It is comprised of four parts, each part being a number between 0 and 255, separated by "." and consumes 32 bits. Example: 123.123.123.123
@@ -24,7 +28,6 @@ Notes:
   - The namespace is specific to a single entity or organisation.
 
 Every domain can be registered to only one entity.
-
 
 The cliente-server model, the two important parties in the transfer of networked information are the computer requesting information (client) and the machine assigned with the duty of providing that information (server).
 
@@ -63,3 +66,71 @@ HTTP Methods
   - We use POST over GET in two situations:
     - Large amount of data to transmit.
     - 'Hiding' data
+
+- The HEAD Method
+  - Using this method the client will be able to obtain all of the headers for a resource before getting hold of it.
+  - The header contains metadata about the actual resource.
+
+- The OPTIONS Method
+  - This method will return a response which contains a list of all the methods supported by a server and the resource being requested.
+
+- The PUT Method
+  - Used to place resources onto the server.
+  - The body of the method will contain the data of the resource being uploaded and an extra header (the location on the server to place the resource).
+  - This method returns:
+    - 200 (OK) if the resource is stored.
+    - 204 (No content) if the resource was not placed on the server.
+    - 201 (Created) if the resource is new to the server.
+  - The PUT request differs from POST because it contains the Request-URI header field.
+  - A PUT request is not recommended for a simple data transfer.
+
+- The DELETE Method
+  - Used to remove resources from the server using the DELETE method.
+  - There are some securities considerations in the use of this method.
+  - The body of this method is usually empty.
+
+- The TRACE Method
+  - Used when a client needs to verify if a server is working properly.
+  - What is requested to the server is reflected back in the response.
+  - Usually used for debugging process.
+
+- The CONNECT Method
+  - Is reserved for future use in the RFC-2616.
+
+HTTP Status Codes
+- HTTP gives some feedback as to how the request has been processed.
+- Comes in the form of HTTP status codes.
+- Each status code is sent in an HTTP response and used by the client to determine what to do next.
+- Each status code is a number which is three digits long.
+  - The first indicates the status class.
+  - The last two are used to identify the exact status type within a general category.
+
+- Informational (1xx)
+  - Are reported during a connection with the client, but do not signify the termination of the request.
+
+- Successful (2xx)
+  - Indicates that the request has been successfully completed.
+
+- Redirection (3xx)
+  - Indicates that the requested resource has been moved somewhere else and no, longer resides at the requested location.
+
+- Client Error (4xx)
+  - Are generated and returned when an error has occured on the part of the client making the request.
+
+- Server Error (5xx)
+  - Are generated when the server fails to respond correctly.
+
+Cookies
+- Used on the internet to maintain persistence of a users's settings beetween visits to a website.
+- Cookies are small text files stored on the client machine.
+- Contain information sent to the server, so they are a temporary form of persistent storage.
+- User is free to modify or delete them.
+- User agent may not support cookies or the user may have disabled them.
+- The availability and integrity of cookies can never be guaranteed.
+- Secutiry:
+  - Cookies are stored based upon the domain, su-domain and path.
+
+
+**************************************************************************************************************************
+**********************                              Chapter 2                                      **********************
+**************************************************************************************************************************
