@@ -70,6 +70,7 @@ HTTP Methods
 - The HEAD Method
   - Using this method the client will be able to obtain all of the headers for a resource before getting hold of it.
   - The header contains metadata about the actual resource.
+  - It's defined to use the headers of GET method.
 
 - The OPTIONS Method
   - This method will return a response which contains a list of all the methods supported by a server and the resource being requested.
