@@ -15,7 +15,7 @@ Notes:
 - General format for the URI is: scheme:hierarchy[?query][#fragmentid] where the bracketed sections are optional.
 
 - For URL (Uniform Resource Locator), the hierarchy is composed of two further parts: //authority/path. 
-  - In practice, the authority is a server name or addresss, optionally containing user and port therefore takes the general form: [@user]host[:port].
+  - In practice, the authority is a server name or address, optionally containing user and port therefore takes the general form: [@user]host[:port].
   - The path is the location of the resource within the authority.
   - Below we have a familiar construction of a typical URL: http://www.nailsandfixings.com:8080/catalogue?part=4563
     - In the example above, http is the scheme.
@@ -25,11 +25,11 @@ Notes:
 	
 - For URN (Uniform Resource Name) the structure may be unfamiliar but is quite simple. urn:namespace:otherdata
   - The scheme for a URN is always urn.
-  - The namespace is specific to a single entity or organisation.
+  - The namespace is specific to a single entity or organization.
 
 Every domain can be registered to only one entity.
 
-The cliente-server model, the two important parties in the transfer of networked information are the computer requesting information (client) and the machine assigned with the duty of providing that information (server).
+The client-server model, the two important parties in the transfer of networked information are the computer requesting information (client) and the machine assigned with the duty of providing that information (server).
 
 In order to deliver data from one endpoint to another we need to use a standard, well-accepted protocol.
 
@@ -56,9 +56,9 @@ Requests and responses
 HTTP Methods
 - The GET Method
   - The GET method is used to request the retrieval of a resource from a server
-  - Used when the client is requesting a resource be returned from the server and the client does not wish to provide any aditional parameters or information to upload.
+  - Used when the client is requesting a resource be returned from the server and the client does not wish to provide any additional parameters or information to upload.
   - Does not contain any HTTP body data since the only data required by the server is the URI to the resource.
-  - It may however supply some supplmentary data using the attributed encoded in the form of a query string, using a question mark to begin the sequence and ampersands (&) to separate the parameters.
+  - It may however supply some supplementary data using the attributed encoded in the form of a query string, using a question mark to begin the sequence and ampersands (&) to separate the parameters.
 
 - The POST Method
   - The POST method is used primarily when there is a lot of data to be transferred.
@@ -116,7 +116,7 @@ HTTP Status Codes
   - Indicates that the requested resource has been moved somewhere else and no, longer resides at the requested location.
 
 - Client Error (4xx)
-  - Are generated and returned when an error has occured on the part of the client making the request.
+  - Are generated and returned when an error has occurred on the part of the client making the request.
 
 - Server Error (5xx)
   - Are generated when the server fails to respond correctly.
@@ -128,10 +128,59 @@ Cookies
 - User is free to modify or delete them.
 - User agent may not support cookies or the user may have disabled them.
 - The availability and integrity of cookies can never be guaranteed.
-- Secutiry:
-  - Cookies are stored based upon the domain, su-domain and path.
+- Security:
+  - Cookies are stored based upon the domain, sub-domain and path.
 
 
 **************************************************************************************************************************
-**********************                              Chapter 2                                      **********************
+**********************                              Chapter 2                                      ***********************
+**************************************************************************************************************************
+
+There are two main uses of Java EE platform:
+  - To provide business services such as database storage and transaction processing for clients operating on a network.
+  - To provide web front-ends and business services to clients using the biggest network of all: the internet.
+
+A Web Component is defined in the Java EE specification to be either a servlet or a JSP.
+
+A Web Application is a collection of Web Components.
+
+The Web Container is where all Web applications are managed and executed.
+
+Web Application Context is a virtual divide between one application and another.Each application has its own unique context root.
+
+There are two methods to use when deploying an application:
+- Upload all files unpackaged to the server, creating directories where necessary and arranging files separately.
+- Package all related application file into a single WAR (Web Application Archive) file and upload this single file.
+
+WAR Files
+- Similar to a JAR file in composition but it has a well-defined content structure.
+- Contains all the files for a single application and the metadata which describes the application to the container.
+  
+Context Path
+- Context root is unique for each application.
+- One servlet can call another using one of two URL formats:
+  - Relative URLs: Have no opening forward slash and are interpreted relative to the path of the calling servlet.
+  - Context-Relative URLs: Are based on the context of the application, not the location of the servlet.
+  
+WAR Structure
+- It is deployed to a context relative to the Web server.
+- When files are appended to the context root for the application, the path of a resource inside the WAR becomes the URL of that resource.
+- There is a special directory called WEB-INF, this is required for a WAR to be valid.
+- The WEB-INF directory
+  - This directory is private in nature, accessible only to the Web container in which application is deployed.
+  - WEB-INF/classes/ is used for the storage of all compiled classes required by the application.
+  - WEB-INF/lib/ is used to place JAR libraries of classes in this subdirectory.
+  - WEB-INF/tags/ is used for the storage of JSP tag files.
+  
+The Deployment Descriptor
+- The WEB-INF/web.xml file is required to be present in every application archive.
+- It's a XML-formatted deployment descriptor and provides metadata information about the application and WAR to the container.
+
+Key Java EE Web Components   
+- Servlets: The key building block for any Web Application.
+- JavaServer Pages: JSPs are essentially dynamic documents. It is written like a standard HTML or XML document but with embedded Java code.
+- Tag Libraries: Those are essentially Java classes which encapsulate standard functionality required by multiple JSP components. 
+
+**************************************************************************************************************************
+**********************                              Chapter 3                                       **********************
 **************************************************************************************************************************
