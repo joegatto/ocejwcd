@@ -184,3 +184,67 @@ Key Java EE Web Components
 **************************************************************************************************************************
 **********************                              Chapter 3                                       **********************
 **************************************************************************************************************************
+
+Servlet is a Java class that implements javax.servlet.Servlet interface.
+
+A servet at its most basic must implement the javax.servlet.Servlet interface, but there is an abstract class called javax.servlet.GenericServlet that provides functionally but it's protocol-independent.
+
+Since HTTP is the most known web protocol, the API includes a specific implementation to handle this kind of protocol, javax.servlet.http.HttpServlet.
+
+Servlet Life Cycles
+At run time, a servlet goes through the following 5 stages:
+- Before the class can be used, it must be loaded by the application class loader.
+- When the container call the servlet, it needs to be instantiated like any other Java class.
+- Then the servlet needs to be initialized with the servlet information, performed by the init method.
+- At this stage the servlet is on service period, i.e. it's able to handle requests and responses.
+- Finally servlet can be destroyed.
+
+The last stage is normally performed when the server is shut-down, the application is undeployed or there are no requests to a servlet for a long period of time.
+
+Servlet Class Loading
+- Each application has its own class loader.
+- The class is loaded before being instantiated for the first time.
+- A servlet in one application cannot communicate with a servlet in another application.
+
+Servlet Instantiation
+- Each servlet must be instantiated by the container in a generic way, since the container doesn't know what protocol the servlet supports.
+- It used the default (no-argument) constructor to create a servlet instance.
+
+Initialization
+- Each servlet must provide an implementation of the following method defined in the Servlet interface:
+  - void init(ServletConfig): Initializes the servlet to its default state.
+  - The GenericServlet class, implements this method and save the ServletConfig parameter as a private attribute inside the servlet.
+  - And also defines one more initialization method: void init().
+- Initialization Exceptions
+  - During the call to init() method, the servlet can throw exceptions.
+  - The most common being because a required persistent storage mechanism is offline and configuration cannot be retrieved.
+  - Required initialization parameters cannot be found or are not valid.
+  - If an exception occurs:
+    - The container will not continue to initialize.
+    - Will not run this instance of the servlet.
+    - Will be moved directly to the last stage of life cycle.
+    - The destroy method will not be called.
+  - The init() method can throw an UnavailableException which marks a component as being 'offline'.
+  
+The destroy method
+- The destruction of a servlet occurs with garbage collectors. So we cannot be sure when it will be destroyed.
+- The container requests that the servlet be destroyed. And the destroy() method is called.
+  - destroy() method is used to release some extra resources.
+
+Requesting Servicing
+- Since the container must provide support for any protocol used by the servlet. The Servlet interfaces define one single method for servicing requests: void service(ServletRequest, ServletResponse)
+  - It is used when a request of any type and of any protocol) is made to the servlet.
+  
+HTTP Servlets
+- HTTP Request Servicing
+  - There are two interface in the javax.servlet.http package:
+    - HttpServletRequest extends ServletRequest
+    - HttpServletResponse extends ServletResponse
+- An HTTP request to an HttpServlet goes through the steps:
+  - A call to the public service(ServletRequest, ServletResponse).
+  - Delegation of this call to HttpServlet's protected method.
+  - The protected method service(HttpServletRequest, HttpServletResponse) delegates to the appropriate doXxx method.
+
+
+
+
