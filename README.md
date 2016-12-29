@@ -245,6 +245,21 @@ HTTP Servlets
   - Delegation of this call to HttpServlet's protected method.
   - The protected method service(HttpServletRequest, HttpServletResponse) delegates to the appropriate doXxx method.
 
+**************************************************************************************************************************
+**********************                              Chapter 4                                       **********************
+**************************************************************************************************************************
+Servlet Contexts
+- Retrieve information about the location of the application being executed.
+- Dynamically query the Java EE server to find another application currently running on the server.
+- Retrieve and modify application-scoped attributes and initialisation parameters.
+- Obtain handles on InputStream for the importation of static resources.
+- Create a RequestDispatcher object 
 
-
+Context Attributes
+- Are variable that needs to be accessible to all components in the applications.
+- There are 4 scopes for context attributes:
+  - Application
+  - Request
+  - Session
+  - Page
 

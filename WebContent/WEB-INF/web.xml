@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns="http://java.sun.com/xml/ns/javaee" version="2.5">
+	<servlet>
+		<servlet-name>c03e15</servlet-name>
+		<servlet-class>br.com.gatto.ocejwcd.chapter3.C03E15</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>c03e15</servlet-name>
+		<url-pattern>/c03e15</url-pattern>
+	</servlet-mapping>
+	<servlet>
+		<servlet-name>c03e16</servlet-name>
+		<servlet-class>br.com.gatto.ocejwcd.chapter3.C03E16</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>c03e16</servlet-name>
+		<url-pattern>/c03e16</url-pattern>
+	</servlet-mapping>
+</web-app>
