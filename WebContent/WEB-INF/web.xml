@@ -16,4 +16,53 @@
 		<servlet-name>c03e16</servlet-name>
 		<url-pattern>/c03e16</url-pattern>
 	</servlet-mapping>
+	<servlet>
+		<servlet-name>c04e09</servlet-name>
+		<servlet-class>br.com.gatto.ocejwcd.chapter4.C04E09</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>c04e09</servlet-name>
+		<url-pattern>/c04e09</url-pattern>
+	</servlet-mapping>
+	<servlet>
+		<servlet-name>c04e10</servlet-name>
+		<servlet-class>br.com.gatto.ocejwcd.chapter4.C04E10</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>c04e10</servlet-name>
+		<url-pattern>/c04e10</url-pattern>
+	</servlet-mapping>
+	<servlet>
+		<servlet-name>c04e13</servlet-name>
+		<servlet-class>br.com.gatto.ocejwcd.chapter4.C04E13</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>c04e13</servlet-name>
+		<url-pattern>/c04e13</url-pattern>
+	</servlet-mapping>
+	<servlet>
+		<servlet-name>c04e15</servlet-name>
+		<servlet-class>br.com.gatto.ocejwcd.chapter4.C04E15</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>c04e15</servlet-name>
+		<url-pattern>/c04e15</url-pattern>
+	</servlet-mapping>
+	<servlet>
+		<servlet-name>c04e16</servlet-name>
+		<servlet-class>br.com.gatto.ocejwcd.chapter4.C04E16</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>c04e16</servlet-name>
+		<url-pattern>/c04e16</url-pattern>
+	</servlet-mapping>
+
+	<context-param>
+		<param-name>apptitle</param-name>
+		<param-value>My Ecommerce Website</param-value>
+	</context-param>
+	<context-param>
+		<param-name>language</param-name>
+		<param-value>en</param-value>
+	</context-param>
 </web-app>
